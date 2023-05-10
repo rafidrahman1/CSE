@@ -3,9 +3,9 @@ https://youtube.com/.....
 
 Two public links to the Concept Map (anyone on the internet can view without login):
 PDF: 
-https://github.com/annajiat/CSE123/blob/main/submission3/Concept%20Map.pdf
+https://github.com/rafidrahman1/CSE/blob/main/CSE%20341/Task%203/Concept%20Map.pdf
 Native/original format: 
-https://draw.io/...
+https://app.diagrams.net/#Hrafidrahman1%2FCSE%2FCSE-431%2FConcept%20Map
 
 Name, Author, Edition, year, and publisher of the Book:
 Natural Language Processing with Python
