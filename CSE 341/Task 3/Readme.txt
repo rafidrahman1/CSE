@@ -1,30 +1,22 @@
-Overleaf link with edit access to ST, RA and my gmail.
-https://www.overleaf.com/read/dptcyhfpfnsq
-Unlisted YouTube video:
-https://www.youtube.com/watch?v=6Eim7HF8tWc&list=PL4TOTkpQXdguNjuejzmITAJL8t1sfk4Df&pp=gAQB
-Slide Link:
-https://docs.google.com/presentation/d/1Lv1byTBtw6vc8erEyzMJTwYcMnQhIx3RaNvcoKcIUXA/edit?usp=sharing
+Link to unlisted YouTube video:
+https://youtube.com/.....
 
+Two public links to the Concept Map (anyone on the internet can view without login):
+PDF: 
+https://github.com/annajiat/CSE123/blob/main/submission3/Concept%20Map.pdf
+Native/original format: 
+https://draw.io/...
 
-Conference submitted paper / paper submission / login Link:
+Name, Author, Edition, year, and publisher of the Book:
+Natural Language Processing with Python
+– Analyzing Text with the Natural Language Toolkit
+Steven Bird, Ewan Klein, and Edward Loper
 
+Link to the book:
+https://www.nltk.org/book/
 
-Paper title:
-Content Analysis Using Keyword Extraction
-
-Paper presentation (anyone can view without login):
-
-Paper submission date (to workshop/conference):
-
-
-Paper submission ID: (received) from conference/workshop
-
-
-Conference Name:
-
-
-Conference URL:
-
+Link to the book chapter:
+https://www.nltk.org/book/ch07.html
 
 Group Number:
 14
