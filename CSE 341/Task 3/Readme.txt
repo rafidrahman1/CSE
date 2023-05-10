@@ -1,6 +1,9 @@
 Link to unlisted YouTube video:
 https://youtube.com/.....
 
+Slide Link:
+https://docs.google.com/presentation/d/1JNGXvYTUpMW8EaSBjieADPGKZ4x1m2Zk3kKWfGZX6XU/edit?usp=sharing
+
 Two public links to the Concept Map (anyone on the internet can view without login):
 PDF: 
 https://github.com/rafidrahman1/CSE/blob/main/CSE%20341/Task%203/Concept%20Map.pdf
