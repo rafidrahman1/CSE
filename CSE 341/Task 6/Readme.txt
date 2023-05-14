@@ -8,8 +8,16 @@ https://docs.google.com/presentation/d/1Lv1byTBtw6vc8erEyzMJTwYcMnQhIx3RaNvcoKcI
 
 Conference submitted paper / paper submission / login Link:
 
+Conference Name: https://www.ijnrd.org/
+Registration ID : IJNRD195329
 
-Paper title:
+
+Conference tracking URL: https://www.ijnrd.org/track.php
+
+
+Conference Submission Date: 14 May 2023
+
+Paper title: 
 Content Analysis Using Keyword Extraction
 
 Paper presentation (anyone can view without login):
