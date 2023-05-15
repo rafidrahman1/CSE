@@ -7,18 +7,17 @@ https://www.youtube.com/watch?v=dBHNbbtiLfY&list=PL4TOTkpQXdgutnIy3_BuzSFDitDe1a
 
 Conference submitted paper / paper submission / login Link:
 
-Conference Name: https://www.ijnrd.org/
-Registration ID : IJNRD195329
+Conference Name: https://journal.uob.edu.bh/
 
 
-Conference tracking URL: https://www.ijnrd.org/track.php
+
+Conference tracking URL: https://edas.info/showPaper.php?m=1570914362
 
 
-Conference Submission Date: 14 May 2023
+Conference Submission Date: 15 May 2023
 
 Paper title: 
-Content Analysis Using Keyword Extraction
-
+Create A System That Can Automatically Summarize Long Pieces of Text into A Shorter Version
 Paper presentation (anyone can view without login):
 
 Paper submission date (to workshop/conference):
