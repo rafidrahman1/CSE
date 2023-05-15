@@ -1,8 +1,7 @@
 Overleaf link with edit access to ST, RA and my gmail.
 https://www.overleaf.com/read/tnfhctnnmkxk
 Unlisted YouTube video:
-https://www.youtube.com/watch?v=dBHNbbtiLfY&list=PL4TOTkpQXdgutnIy3_BuzSFDitDe1a2a5&pp=gAQB
-
+https://www.youtube.com/watch?v=lqGOA44CNc8&list=PL4TOTkpQXdgv8QsHUMRffw5mzclujgpcR&pp=gAQBiAQB
 
 
 Conference submitted paper / paper submission / login Link:
