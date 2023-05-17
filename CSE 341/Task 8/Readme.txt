@@ -6,7 +6,7 @@ https://www.youtube.com/watch?v=lqGOA44CNc8&list=PL4TOTkpQXdgv8QsHUMRffw5mzclujg
 
 Conference submitted paper / paper submission / login Link:
 
-Conference Name: https://journal.uob.edu.bh/
+Conference Name: https://journal.uob.edu.bh/handle/123456789/12?id=about
 
 
 
