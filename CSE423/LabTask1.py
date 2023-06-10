@@ -68,7 +68,7 @@ def showScreen():
     draw_hlines(155,185, 210)#outer wall(S)
     draw_hlines(154,185,240)#outer wall(N)
     draw_vlines(155, 210, 240)#outer wall(W)
-    draw_vlines(185, 210, 240)#outer wall(E)
+    draw_vlines(185, 210, 240)#outer walla(E)
 
     draw_hlines(215,245, 210)#outer wall(S)
     draw_hlines(214,245,240)#outer wall(N)
