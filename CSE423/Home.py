@@ -40,7 +40,7 @@ def draw_lines(a,b,c,d):
 #def triangles()
     #glBegin(GL_TRIANGLES)
 
-    #glEnd()
+    #glEnd()s
 
 def iterate():
     glViewport(0, 0, 500, 500)
