@@ -8,7 +8,7 @@ import random
 def draw_points(x, y, a, b, c):
     glPointSize(2) #pixel size. by default 1 thake
     glBegin(GL_POINTS)
-    glColor3f(a, b, c)
+    glColor3f(a, b, c) #color
     glVertex2f(x,y) #jekhane show korbe pixel
     glEnd()
 
@@ -87,9 +87,9 @@ def showScreen():
     #random pixel Generator.
     
     for i in range(50):
-     n = random.randint(300,400)
-     p = random.randint(300,400)
-     a = random.randint(0,1)
+     n = random.randint(300,400)#random x axis point
+     p = random.randint(300,400)#random y axis point
+     a = random.randint(0,1)#radom color
      b = random.randint(0,1)
      c = random.randint(0,1)
      draw_points(n,p,a,b,c)
