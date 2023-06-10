@@ -77,7 +77,7 @@ def showScreen():
 
     #draw_door
     draw_hlines(184,215, 200)#outer wall(N)
-    draw_vlines(185, 150, 200)#outer wall(W)
+    draw_vlines(185, 150, 200)#outer  wall(W)
     draw_vlines(215, 150, 200)#outer wall(E)
 
     #door_knob
