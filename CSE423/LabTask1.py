@@ -95,7 +95,7 @@ def showScreen():
      draw_points(n,p,a,b,c)
 
     
-    #student ID generatorrr44r
+    #student ID generator
 
 
 
