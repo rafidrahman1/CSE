@@ -94,6 +94,8 @@ def showScreen():
      c = random.randint(0,1)
      draw_points(n,p,a,b,c)
 
+    
+    #student ID generator
 
 
 
