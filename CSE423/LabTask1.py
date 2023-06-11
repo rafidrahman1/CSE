@@ -2,8 +2,13 @@ from OpenGL.GL import *
 from OpenGL.GLUT import *
 from OpenGL.GLU import *
 import random
+import array as arr
 #github test
 
+
+
+x = input()
+arr = [int(x) for x in str(x)]
 
 def draw_points(x, y, a, b, c):
     glPointSize(2) #pixel size. by default 1 thake
@@ -14,23 +19,22 @@ def draw_points(x, y, a, b, c):
 
 def zero(a,b):
     glBegin(GL_LINES)
-    glColor3f(1.0, 0.0, 0.0)
+    glColor3f(1.0, 0.0, 1.0)
     x=b+20
-    y=b-2
-    z=y-20
+    z=b-20
     s=a-20
     #vertical    
     glVertex2f(a, b)
     glVertex2f(a, x)
 
     glVertex2f(a, z)
-    glVertex2f(a, y)
+    glVertex2f(a, b)
 
     glVertex2f(s, b)
     glVertex2f(s, x)
     
     glVertex2f(s, z)
-    glVertex2f(s, y)
+    glVertex2f(s, b)
 
     #horizontal
     glVertex2f(s,z)
@@ -44,37 +48,35 @@ def zero(a,b):
 
 def one(a,b):
     glBegin(GL_LINES)
-    glColor3f(0.0, 1.0, 0.0)
+    glColor3f(1.0, 1.0, 1.0)
     x=b+20
-    y=b-2
-    z=y-20
+    z=b-20
     s=a-20
     #vertical
     glVertex2f(a, b)
     glVertex2f(a, x)
 
     glVertex2f(a, z)
-    glVertex2f(a, y)
+    glVertex2f(a, b)
 
     glEnd()
 
 def two(a,b):
     glBegin(GL_LINES)
-    glColor3f(0.0, 0.0, 1.0)
+    glColor3f(1.0, 0.0, 0.0)
     x=b+20
-    y=b-2
-    z=y-20
+    z=b-20
     s=a-20
     #vertical
     glVertex2f(a, b)
     glVertex2f(a, x)
 
     glVertex2f(s, z)
-    glVertex2f(s, y)
+    glVertex2f(s, b)
 
     #horizontal
-    glVertex2f(s,y)
-    glVertex2f(a,y)
+    glVertex2f(s,b)
+    glVertex2f(a,b)
 
     glVertex2f(s,z)
     glVertex2f(a,z)
@@ -86,10 +88,9 @@ def two(a,b):
 
 def three(a,b):
     glBegin(GL_LINES)
-    glColor3f(1.0, 1.0, 0.0)
+    glColor3f(0.0, 1.0, 0.0)
     x=b+20
-    y=b-2
-    z=y-20
+    z=b-20
     s=a-20
 
     #verticle
@@ -97,11 +98,11 @@ def three(a,b):
     glVertex2f(a, x)
 
     glVertex2f(a, z)
-    glVertex2f(a, y)
+    glVertex2f(a, b)
 
     #horizontal
-    glVertex2f(s,y)
-    glVertex2f(a,y)
+    glVertex2f(s,b)
+    glVertex2f(a,b)
 
     glVertex2f(s,z)
     glVertex2f(a,z)
@@ -113,10 +114,9 @@ def three(a,b):
 
 def four(a,b):
     glBegin(GL_LINES)
-    glColor3f(1.0, 0.0, 1.0)
+    glColor3f(0.0, 0.0, 1.0)
     x=b+20
-    y=b-2
-    z=y-20
+    z=b-20
     s=a-20
 
     #verticle
@@ -127,20 +127,122 @@ def four(a,b):
     glVertex2f(s, x)
 
     glVertex2f(a, z)
-    glVertex2f(a, y)
+    glVertex2f(a, b)
 
     #horizontal
-    glVertex2f(s,y)
-    glVertex2f(a,y)
+    glVertex2f(s,b)
+    glVertex2f(a,b)
    
     glEnd()  
+
+def five(a,b):
+    glBegin(GL_LINES)
+    glColor3f(1.0, 1.0, 0.0)
+    x=b+20
+    z=b-20
+    s=a-20
+    #vertical
+    glVertex2f(s, b)
+    glVertex2f(s, x)
+
+    glVertex2f(a, z)
+    glVertex2f(a, b)
+
+    #horizontal
+    glVertex2f(s,b)
+    glVertex2f(a,b)
+
+    glVertex2f(s,z)
+    glVertex2f(a,z)
+    
+    glVertex2f(s,x)
+    glVertex2f(a,x)
+   
+    glEnd()    
+
+def six(a,b):
+    glBegin(GL_LINES)
+    glColor3f(0.0, 1.0, 1.0)
+    x=b+20
+    z=b-20
+    s=a-20
+    #vertical
+    glVertex2f(s, b)
+    glVertex2f(s, x)
+
+    glVertex2f(a, z)
+    glVertex2f(a, b)
+
+    glVertex2f(s, z)
+    glVertex2f(s, b)
+
+    #horizontal
+    glVertex2f(s,b)
+    glVertex2f(a,b)
+
+    glVertex2f(s,z)
+    glVertex2f(a,z)
+    
+    glVertex2f(s,x)
+    glVertex2f(a,x)
+   
+    glEnd()  
+
+def seven(a,b):
+    glBegin(GL_LINES)
+    glColor3f(1.0, 0.0, 1.0)
+    x=b+20
+    z=b-20
+    s=a-20
+    #vertical
+    glVertex2f(a, b)
+    glVertex2f(a, x)
+
+    glVertex2f(a, z)
+    glVertex2f(a, b)
+ 
+    #horizontal
+    glVertex2f(s,x)
+    glVertex2f(a,x)
+   
+    glEnd()
+
+def eight(a,b):
+    glBegin(GL_LINES)
+    glColor3f(1.0, 0.0, 0.0)
+    x=b+20
+    z=b-20
+    s=a-20
+    #vertical    
+    glVertex2f(a, b)
+    glVertex2f(a, x)
+
+    glVertex2f(a, z)
+    glVertex2f(a, b)
+
+    glVertex2f(s, b)
+    glVertex2f(s, x)
+    
+    glVertex2f(s, z)
+    glVertex2f(s, b)
+
+    #horizontal
+    glVertex2f(s,b)
+    glVertex2f(a,b)
+
+    glVertex2f(s,z)
+    glVertex2f(a,z)
+    
+    glVertex2f(s,x)
+    glVertex2f(a,x)
+
+    glEnd()
 
 def nine(a,b):
     glBegin(GL_LINES)
     glColor3f(0.0, 1.0, 1.0)
     x=b+20
-    y=b-2
-    z=y-20
+    z=b-20
     s=a-20
 
     #verticle
@@ -151,11 +253,11 @@ def nine(a,b):
     glVertex2f(s, x)
 
     glVertex2f(a, z)
-    glVertex2f(a, y)
+    glVertex2f(a, b)
 
     #horizontal
-    glVertex2f(s,y)
-    glVertex2f(a,y)
+    glVertex2f(s,b)
+    glVertex2f(a,b)
 
     glVertex2f(s,z)
     glVertex2f(a,z)
@@ -168,7 +270,7 @@ def nine(a,b):
 
 def draw_hlines(x1,x2,y):
     glBegin(GL_LINES)
-    glColor3f(0.0, 1.0, 0.0)
+    glColor3f(0.0, 1.0, 1.0)
     glVertex2f(x1,y)
     glVertex2f(x2,y)
     glEnd()
@@ -176,7 +278,7 @@ def draw_hlines(x1,x2,y):
 
 def draw_vlines(x,y1,y2):
     glBegin(GL_LINES)
-    glColor3f(0.0, 1.0, 0.0)
+    glColor3f(0.0, 1.0, 1.0)
     glVertex2f(x,y1)
     glVertex2f(x,y2)
     glEnd()
@@ -197,7 +299,7 @@ def draw_lines(a,b,c,d):
     #glEnd()s
 
 def iterate():
-    glViewport(0, 0, 500, 500)
+    glViewport(0, 0, 700, 700)#zoom
     glMatrixMode(GL_PROJECTION)
     glLoadIdentity()
     glOrtho(0.0, 500, 0.0, 500, 0.0, 1.0)
@@ -262,27 +364,31 @@ def showScreen():
     draw_hlines(265,285,188)
     draw_hlines(265,285,230)
     """
-    
+    z=230
+    y=280
+    for i in range(len(arr)):
+        if arr[i]==0:
+           zero(y,z)
+        elif arr[i]==1:
+            one(y,z) 
+        elif arr[i]==2:
+            two(y,z)     
+        elif arr[i]==3:
+            three(y,z)
+        elif arr[i]==4:
+            four(y,z)
+        elif arr[i]==5:
+            five(y,z)
+        elif arr[i]==6:
+            six(y,z)
+        elif arr[i]==7:
+            seven(y,z)
+        elif arr[i]==8:
+            eight(y,z)
+        else:
+            nine(y,z)      
 
-    
-    two(280,230)
-    two(310,230)
-    three(340,230)
-    four(370,230)
-    one(400,230)
-    zero(430,230)
-    three(460,230)
-    nine(490,230)
-
-    
-
-
-    
-
-    
-
-
-
+        y+=30             
 
     glutSwapBuffers()
 
@@ -290,7 +396,7 @@ def showScreen():
 
 glutInit()
 glutInitDisplayMode(GLUT_RGBA)
-glutInitWindowSize(500, 500) #window size
+glutInitWindowSize(800, 800) #window size
 glutInitWindowPosition(0, 0)
 wind = glutCreateWindow(b"500 taka vangti lagbe") #window name
 glutDisplayFunc(showScreen)
