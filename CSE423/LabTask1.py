@@ -359,9 +359,9 @@ def showScreen():
     #2
     """
     draw_vlines(285, 210, 230)
-    draw_vlines(265, 188, 208)
-    draw_hlines(265,285,208)
-    draw_hlines(265,285,188)
+    draw_vlines(265, 190, 210)
+    draw_hlines(265,285,210)
+    draw_hlines(265,285,190)
     draw_hlines(265,285,230)
     """
     z=230
