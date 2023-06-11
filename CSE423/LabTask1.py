@@ -12,7 +12,158 @@ def draw_points(x, y, a, b, c):
     glVertex2f(x,y) #jekhane show korbe pixel
     glEnd()
 
+def zero(a,b):
+    glBegin(GL_LINES)
+    glColor3f(1.0, 0.0, 0.0)
+    x=b+20
+    y=b-2
+    z=y-20
+    s=a-20
+    #vertical    
+    glVertex2f(a, b)
+    glVertex2f(a, x)
 
+    glVertex2f(a, z)
+    glVertex2f(a, y)
+
+    glVertex2f(s, b)
+    glVertex2f(s, x)
+    
+    glVertex2f(s, z)
+    glVertex2f(s, y)
+
+    #horizontal
+    glVertex2f(s,z)
+    glVertex2f(a,z)
+    
+    glVertex2f(s,x)
+    glVertex2f(a,x)
+
+    glEnd()
+
+
+def one(a,b):
+    glBegin(GL_LINES)
+    glColor3f(0.0, 1.0, 0.0)
+    x=b+20
+    y=b-2
+    z=y-20
+    s=a-20
+    #vertical
+    glVertex2f(a, b)
+    glVertex2f(a, x)
+
+    glVertex2f(a, z)
+    glVertex2f(a, y)
+
+    glEnd()
+
+def two(a,b):
+    glBegin(GL_LINES)
+    glColor3f(0.0, 0.0, 1.0)
+    x=b+20
+    y=b-2
+    z=y-20
+    s=a-20
+    #vertical
+    glVertex2f(a, b)
+    glVertex2f(a, x)
+
+    glVertex2f(s, z)
+    glVertex2f(s, y)
+
+    #horizontal
+    glVertex2f(s,y)
+    glVertex2f(a,y)
+
+    glVertex2f(s,z)
+    glVertex2f(a,z)
+    
+    glVertex2f(s,x)
+    glVertex2f(a,x)
+   
+    glEnd()
+
+def three(a,b):
+    glBegin(GL_LINES)
+    glColor3f(1.0, 1.0, 0.0)
+    x=b+20
+    y=b-2
+    z=y-20
+    s=a-20
+
+    #verticle
+    glVertex2f(a, b) 
+    glVertex2f(a, x)
+
+    glVertex2f(a, z)
+    glVertex2f(a, y)
+
+    #horizontal
+    glVertex2f(s,y)
+    glVertex2f(a,y)
+
+    glVertex2f(s,z)
+    glVertex2f(a,z)
+    
+    glVertex2f(s,x)
+    glVertex2f(a,x)
+   
+    glEnd()    
+
+def four(a,b):
+    glBegin(GL_LINES)
+    glColor3f(1.0, 0.0, 1.0)
+    x=b+20
+    y=b-2
+    z=y-20
+    s=a-20
+
+    #verticle
+    glVertex2f(a, b) 
+    glVertex2f(a, x)
+
+    glVertex2f(s, b)
+    glVertex2f(s, x)
+
+    glVertex2f(a, z)
+    glVertex2f(a, y)
+
+    #horizontal
+    glVertex2f(s,y)
+    glVertex2f(a,y)
+   
+    glEnd()  
+
+def nine(a,b):
+    glBegin(GL_LINES)
+    glColor3f(0.0, 1.0, 1.0)
+    x=b+20
+    y=b-2
+    z=y-20
+    s=a-20
+
+    #verticle
+    glVertex2f(a, b) 
+    glVertex2f(a, x)
+
+    glVertex2f(s, b)
+    glVertex2f(s, x)
+
+    glVertex2f(a, z)
+    glVertex2f(a, y)
+
+    #horizontal
+    glVertex2f(s,y)
+    glVertex2f(a,y)
+
+    glVertex2f(s,z)
+    glVertex2f(a,z)
+    
+    glVertex2f(s,x)
+    glVertex2f(a,x)
+   
+    glEnd()  
 
 
 def draw_hlines(x1,x2,y):
@@ -36,6 +187,9 @@ def draw_lines(a,b,c,d):
     glVertex2f(a, b)
     glVertex2f(c, d)
     glEnd()
+
+#def one(x,y):
+
 
 #def triangles()
     #glBegin(GL_TRIANGLES)
@@ -61,8 +215,8 @@ def showScreen():
     draw_hlines(150,250,250)#outer wall(N)
     draw_vlines(150, 150, 251)#outer wall(W)
     draw_vlines(250, 150, 250)#outer wall(E)
-    draw_lines(150,250,200,350)#(L)
-    draw_lines(250,250, 200,350)#(R)
+    draw_lines(150,250,200,325)#(L roof)
+    draw_lines(250,250, 200,325)#(R roof)
 
     #draw_window
     draw_hlines(155,185, 210)#outer wall(S)
@@ -93,12 +247,39 @@ def showScreen():
      b = random.randint(0,1)
      c = random.randint(0,1)
      draw_points(n,p,a,b,c)
+     
 
     
     #student ID generator
 
 
 
+    #2
+    """
+    draw_vlines(285, 210, 230)
+    draw_vlines(265, 188, 208)
+    draw_hlines(265,285,208)
+    draw_hlines(265,285,188)
+    draw_hlines(265,285,230)
+    """
+    
+
+    
+    two(280,230)
+    two(310,230)
+    three(340,230)
+    four(370,230)
+    one(400,230)
+    zero(430,230)
+    three(460,230)
+    nine(490,230)
+
+    
+
+
+    
+
+    
 
 
 
