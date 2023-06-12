@@ -23,7 +23,7 @@ public abstract class BankAccount {
 
     public void deposit(double amount) {
         balance += amount;
-        System.out.println("Deposited: $" + amount);
+        System.out.println("Deposited: " + amount);
     }
 
     public abstract void withdraw(double amount);
@@ -31,6 +31,6 @@ public abstract class BankAccount {
     public void displayAccountInfo() {
         System.out.println("Account Number: " + accountNumber);
         System.out.println("Account Name: " + accountName);
-        System.out.println("Balance: $" + balance);
+        System.out.println("Balance: " + balance);
     }
 }
