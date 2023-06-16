@@ -1,3 +1,4 @@
+from OpenGL.GL import *
 
 def zero(a,b):
     glBegin(GL_LINES)

@@ -4,10 +4,8 @@ from OpenGL.GLU import *
 from Numbers import *
 import random
 import array as arr
-#github test
 
-
-
+print("Enter your ID: ")
 x = input()
 arr = [int(x) for x in str(x)]
 
@@ -15,7 +13,7 @@ def draw_points(x, y, a, b, c):
     glPointSize(2) #pixel size. by default 1 thake
     glBegin(GL_POINTS)
     glColor3f(a, b, c) #color
-    glVertex2f(x,y) #jekhane show korbe pixel
+    glVertex2f(x,y) #jekhane show korbe pixel, Cordinates
     glEnd()
 
 def draw_hlines(x1,x2,y):
@@ -41,8 +39,6 @@ def draw_lines(a,b,c,d):
     glEnd()
 
 #def one(x,y):
-
-
 #def triangles()
     #glBegin(GL_TRIANGLES)
 
@@ -103,9 +99,6 @@ def showScreen():
 
     
     #student ID generator
-
-
-
     #2
     """
     draw_vlines(285, 210, 230)
@@ -115,7 +108,7 @@ def showScreen():
     draw_hlines(265,285,230)
     """
     z=230
-    y=280
+    y=285
     for i in range(len(arr)):
         if arr[i]==0:
            zero(y,z)
@@ -147,8 +140,8 @@ def showScreen():
 glutInit()
 glutInitDisplayMode(GLUT_RGBA)
 glutInitWindowSize(800, 800) #window size
-glutInitWindowPosition(0, 0)
-wind = glutCreateWindow(b"500 taka vangti lagbe") #window name
+glutInitWindowPosition(500, 125)#window position
+window = glutCreateWindow(b"500 taka vangti lagbe") #window name
 glutDisplayFunc(showScreen)
-
 glutMainLoop()
+
