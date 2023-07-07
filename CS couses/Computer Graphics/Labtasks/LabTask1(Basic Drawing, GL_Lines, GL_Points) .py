@@ -56,7 +56,7 @@ def showScreen():
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
     glLoadIdentity()
     iterate()
-     #konokichur color set (RGB)
+    #konokichur color set (RGB)
     #call the draw methods here
     #draw_points(100, 100)
     draw_hlines(150,250, 150)#outer wall(S)
