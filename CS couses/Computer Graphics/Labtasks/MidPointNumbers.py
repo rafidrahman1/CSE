@@ -1,17 +1,17 @@
 from OpenGL.GL import *
-from LabTask2 import midpoint_line_algorithm
+from MidPointLineDrawingAlgorithm import *
 
 
 def zero(a,b,c):
     glBegin(GL_LINES)
     glColor3f(1.0, 0.0, 1.0)
     
-    midpoint_line_algorithm(b, b, b, c)
-    midpoint_line_algorithm(b, a, b, b)
-    midpoint_line_algorithm(b, c, a, c)
-    midpoint_line_algorithm(a, b, a, a)
-    midpoint_line_algorithm(a, a, b, a) 
-    midpoint_line_algorithm(a, b, a, c)  
+    midpoint_line_algorithm(10, 10, 10, 15)
+    midpoint_line_algorithm(10, 5, 10, 10)
+    midpoint_line_algorithm(10, 15, 5, 15)
+    midpoint_line_algorithm(5, 10, 5, 5)
+    midpoint_line_algorithm(5, 5, 10, 5) 
+    midpoint_line_algorithm(5, 10, 5, 15)  
 
     glEnd()
 
