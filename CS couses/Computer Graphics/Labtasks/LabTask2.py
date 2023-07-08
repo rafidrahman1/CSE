@@ -60,8 +60,7 @@ def showScreen():
         b+=7
         c+=7
         j+=1
-        
-
+    
     glutSwapBuffers()
 
 
