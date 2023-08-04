@@ -50,6 +50,6 @@
 
 # if __name__ == '__main__':
 #     main()
-x= 1
-y= -x
-print (y)
+x,y = 1,2
+
+print (x,y)

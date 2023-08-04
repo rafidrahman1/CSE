@@ -88,15 +88,16 @@ def MidpointLine(x0, y0, x1, y1):
 
     while x0 != x1 or y0 != y1:
         draw_points(*OriginalZone(x0, y0, zone))
-        du = 2 * d
-        if du > -dy:
+        e2 = 2 * d
+        if e2 > -dy:
             d -= dy
             x0 += E
-        if du < dx:
+        if e2 < dx:
             d += dx
             y0 += NE
 
     draw_points(*OriginalZone(x0, y0, zone))
+
     
         
  
