@@ -1,2 +1,4 @@
-package com.example.localtpmg.controller;public class TeacheController {
+package com.example.localtpmg.controller;
+
+public class TeacheController {
 }

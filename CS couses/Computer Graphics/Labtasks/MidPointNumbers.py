@@ -4,103 +4,203 @@ from OpenGL.GLU import *
 
 
 def draw_points(x, y):
-    glPointSize(20) #pixel size. by default 1 thake
+    glPointSize(10) #pixel size. by default 1 thake
     glBegin(GL_POINTS)
     glColor3f(1, 0, 1) #color
     glVertex2f(x,y) #jekhane show korbe pixel, Cordinates
     glEnd()
 
-def midpoint_line_algorithm(x0, y0, x1, y1):
+
+#convert to original zone
+def OriginalZone(x,y,zone):
+    if zone == 0:
+        return x, y
+    elif zone == 1:
+        return y, x
+    elif zone == 2:
+        return y, -x
+    elif zone == 3:
+        return -x, y
+    elif zone == 4:
+        return -x, -y
+    elif zone == 5:
+        return -y, -x
+    elif zone == 6:
+        return -y, x
+    elif zone == 7:
+        return x, -y
+
+#convert to zone zero
+def ZoneZero(x, y, zone):
+    if zone == 0:
+        return x, y
+    elif zone == 1:
+        return y, x
+    elif zone == 2:
+        return -y, x
+    elif zone == 3:
+        return -x, y
+    elif zone == 4:
+        return -x, -y
+    elif zone == 5:
+        return -y, -x
+    elif zone == 6:
+        return y, -x
+    elif zone == 7:
+        return x, -y
+
+
+def MidpointLine(x0, y0, x1, y1):
     dx = abs(x1 - x0)
     dy = abs(y1 - y0)
-    E = -1 if x0 > x1 else 1
-    N = -1 if y0 > y1 else 1
+    zone=0
+      
+    #Zone finding
+    if ((dx)>(dy)):
+        if(dx>0 & dy>0):
+            zone= 0
+        elif(dx<0 & dy>0):
+            zone= 3
+        elif(dx>0 & dy<0):
+            zone= 7
+        elif(dx<0 & dy<0):
+            zone= 4
+
+    else:
+        if(dx>0 & dy>0):
+            zone= 1    
+        elif(dx<0 & dy>0):
+            zone= 2             
+        elif(dx<0 & dy<0):
+            zone= 5   
+        elif(dx>0 & dy<0):
+            zone= 6
+
+    #Convert to zone 0
+    x0, y0 = ZoneZero(x0, y0, zone)
+    x1, y1 = ZoneZero(x1, y1, zone)
+
+    
+
+    E = 1 if x0 < x1 else -1
+    NE = 1 if y0 < y1 else -1
     d = dx - dy
 
     while x0 != x1 or y0 != y1:
-        draw_points(x0, y0)
-        d2 = 2 * d
-        if d2 > -dy:
+        draw_points(*OriginalZone(x0, y0, zone))
+        e2 = 2 * d
+        if e2 > -dy:
             d -= dy
             x0 += E
-        if d2 < dx:
+        if e2 < dx:
             d += dx
-            y0 += N
+            y0 += NE
 
-    draw_points(x0, y0)
-
-def zero(a,b,c):
-    midpoint_line_algorithm(b, b, b, c)
-    midpoint_line_algorithm(b, a, b, b)
-    midpoint_line_algorithm(b, c, a, c)
-    midpoint_line_algorithm(a, b, a, a)
-    midpoint_line_algorithm(a, a, b, a) 
-    midpoint_line_algorithm(a, b, a, c)  
-
-def one(a,b,c):
-    midpoint_line_algorithm(a, b, a, c)
-    midpoint_line_algorithm(a, a, a, b)
+    draw_points(*OriginalZone(x0, y0, zone))
+        
+ 
+#numbers
+def zero(a,b):
+    x=b+20
+    z=b-20
+    s=a-20
+    MidpointLine(a, b, a, x)
+    MidpointLine(a, z, a, b)
+    MidpointLine(s, b, s, x)
+    MidpointLine(s, z, s, b)
+    MidpointLine(s, z, a, z) 
+    MidpointLine(s, x, a, x)  
     
 
-def two(a,b,c):
+def one(a,b):
+    x=b+20
+    z=b-20
+    s=a-20
+    MidpointLine(a, b, a, x)
+    MidpointLine(a, z, a, b)
+    
 
-    midpoint_line_algorithm(a, b, b, b)
-    midpoint_line_algorithm(b, c, a, c)
-    midpoint_line_algorithm(b, b, b, c)
-    midpoint_line_algorithm(a, b, a, a)
-    midpoint_line_algorithm(a, a, b, a)     
+def two(a,b):
+    x=b+20
+    z=b-20
+    s=a-20
+    MidpointLine(a, b, a, x)
+    MidpointLine(s, z, s, b)
+    MidpointLine(s, b, a, b)
+    MidpointLine(s, z, a, z)
+    MidpointLine(s, x, a, x)     
+    
    
-def three(a,b,c):
+def three(a,b):
+    x=b+20
+    z=b-20
+    s=a-20
+    MidpointLine(a, b, a, x)
+    MidpointLine(a, z, a, b)
+    MidpointLine(s, b, a, b)
+    MidpointLine(s, z, a, z)
+    MidpointLine(s, x, a, x)   
     
-    midpoint_line_algorithm(a, b, b, b)
-    midpoint_line_algorithm(b, c, a, c)
-    midpoint_line_algorithm(b, b, b, c)
-    midpoint_line_algorithm(b, a, b, b)
-    midpoint_line_algorithm(a, a, b, a)   
 
-def four(a,b,c):
+def four(a,b):
+    x=b+20
+    z=b-20
+    s=a-20
+    MidpointLine(a, b, a, x)
+    MidpointLine(s, b, s, x)
+    MidpointLine(a, z, a, b)
+    MidpointLine(s, b, a, b)  
     
-    midpoint_line_algorithm(a, b, b, b)
-    midpoint_line_algorithm(b, b, b, c)
-    midpoint_line_algorithm(b, a, b, b)
-    midpoint_line_algorithm(a, b, a, c)  
 
-def five(a,b,c):
-
-    midpoint_line_algorithm(a, b, b, b)
-    midpoint_line_algorithm(b, c, a, c)
-    midpoint_line_algorithm(a, b, a, c)
-    midpoint_line_algorithm(b, a, b, b)
-    midpoint_line_algorithm(a, a, b, a)    
-
-def six(a,b,c):
-
-    midpoint_line_algorithm(a, b, b, b)
-    midpoint_line_algorithm(a, a, a, b)
-    midpoint_line_algorithm(b, c, a, c)
-    midpoint_line_algorithm(a, b, a, c)
-    midpoint_line_algorithm(b, a, b, b)
-    midpoint_line_algorithm(a, a, b, a)     
-
-def seven(a,b,c):
-
-    midpoint_line_algorithm(b, b, b, c)
-    midpoint_line_algorithm(b, a, b, b)
-    midpoint_line_algorithm(b, c, a, c)
+def five(a,b):
+    x=b+20
+    z=b-20
+    s=a-20
+    MidpointLine(s, b, s, x)
+    MidpointLine(a, z, a, b)
+    MidpointLine(s, b, a, b)
+    MidpointLine(s, z, a, z)
+    MidpointLine(s, x, a, x)    
     
-def eight(a,b,c):
-    midpoint_line_algorithm(b, b, b, c)
-    midpoint_line_algorithm(b, a, b, b)
-    midpoint_line_algorithm(b, c, a, c)
-    midpoint_line_algorithm(a, b, a, a)
-    midpoint_line_algorithm(a, a, b, a) 
-    midpoint_line_algorithm(a, b, a, c)
-    midpoint_line_algorithm(a, b, b, b) 
 
-def nine(a,b,c):
+def six(a,b):
+    x=b+20
+    z=b-20
+    s=a-20
+    MidpointLine(s, b, s, x)
+    MidpointLine(a, z, a, b)
+    MidpointLine(s, z, s, b)
+    MidpointLine(s, b, a, b)
+    MidpointLine(s, z, a, z)
+    MidpointLine(s, x, a, x)     
+
+def seven(a,b):
+    x=b+20
+    z=b-20
+    s=a-20
+    MidpointLine(a, b, a, x)
+    MidpointLine(a, z, a, b)
+    MidpointLine(s, x, a, x)
     
-    midpoint_line_algorithm(a, b, b, b)
-    midpoint_line_algorithm(a, c, b, c)
-    midpoint_line_algorithm(b, b, b, c)
-    midpoint_line_algorithm(b, a, b, b)
-    midpoint_line_algorithm(a, b, a, c)         
+def eight(a,b):
+    x=b+20
+    z=b-20
+    s=a-20
+    MidpointLine(a, b, a, x)
+    MidpointLine(a, z, a, b)
+    MidpointLine(s, b, s, x)
+    MidpointLine(s, z, s, b)
+    MidpointLine(s, b, a, b) 
+    MidpointLine(s, z, a, z)
+    MidpointLine(s, x, a, x) 
+
+def nine(a,b):
+    x=b+20
+    z=b-20
+    s=a-20
+    MidpointLine(a, b, a, x)
+    MidpointLine(s, b, s, x)
+    MidpointLine(a, z, a, b)
+    MidpointLine(s, b, a, b)
+    MidpointLine(s, z, a, z)  
+    MidpointLine(s, x, a, x)        
