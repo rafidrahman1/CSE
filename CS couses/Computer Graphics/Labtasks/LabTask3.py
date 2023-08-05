@@ -31,7 +31,6 @@ def showScreen():
         offset_x = int(r * math.cos(angle))/2
         offset_y = int(r * math.sin(angle))/2
         
-        
         MidpointCircle(sr, c_x + offset_x, c_y + offset_y)
     
     
