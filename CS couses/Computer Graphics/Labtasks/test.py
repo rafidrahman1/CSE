@@ -3,7 +3,6 @@ from OpenGL.GLUT import *
 import math
 
 def plot_symmetric_points(x, y, cx, cy):
-    
     glVertex2f(cx + x, cy + y)
     glVertex2f(cx - x, cy + y)
     glVertex2f(cx + x, cy - y)
@@ -12,17 +11,14 @@ def plot_symmetric_points(x, y, cx, cy):
     glVertex2f(cx - y, cy + x)
     glVertex2f(cx + y, cy - x)
     glVertex2f(cx - y, cy - x)
-    
 
-def midpoint_circle_algorithm(radius):
-    cx, cy = radius, radius
+def midpoint_circle_algorithm(radius, cx, cy):
     x, y = 0, radius
     d = 1 - radius
 
     glBegin(GL_POINTS)
-    glColor3f(1.0, 0.0, 0.0)
     while x <= y:
-        plot_symmetric_points(x+50, y+50, cx, cy)
+        plot_symmetric_points(x, y, cx, cy)
 
         if d < 0:
             d += 2 * x + 3
@@ -33,29 +29,38 @@ def midpoint_circle_algorithm(radius):
         x += 1
     glEnd()
 
-def iterate():
-    glViewport(0, 0, 700, 700)#zoom
-    glMatrixMode(GL_PROJECTION)
-    glLoadIdentity()
-    glOrtho(0.0, 500, 0.0, 500, 0.0, 1.0)
-    glMatrixMode (GL_MODELVIEW)
-    glLoadIdentity()
+def display():
+    glClear(GL_COLOR_BUFFER_BIT)
+    glColor3f(0.0, 0.0, 0.0)
+
+    glPointSize(2.0)
+    num_circles = 8
+    center_x, center_y = 200, 200  # Adjust the center as needed
+    big_circle_radius = 150  # Adjust the radius of the larger circle
     
+    for i in range(num_circles):
+        angle = (2 * math.pi * i) / num_circles
+        offset_x = int(big_circle_radius * math.cos(angle))
+        offset_y = int(big_circle_radius * math.sin(angle))
+        
+        # Calculate the distance between the center of the larger circle and the center of the current smaller circle
+        distance = math.sqrt(offset_x ** 2 + offset_y ** 2)
+        
+        # Adjust the radius of the smaller circles so they touch the center of the larger circle
+        small_circle_radius = distance - big_circle_radius
+        
+        midpoint_circle_algorithm(int(small_circle_radius), center_x + offset_x, center_y + offset_y)
 
-def showScreen():
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
-    glLoadIdentity()
-    iterate()
-    glPointSize(5.0)
-    midpoint_circle_algorithm(150)
-    glutSwapBuffers()
+    glFlush()
 
-glutInit()
-glutInitDisplayMode(GLUT_RGBA)
-glutInitWindowSize(800, 800) #window size
-glutInitWindowPosition(500, 125)#window position
-window = glutCreateWindow(b"500 taka vangti lagbe") #window name
-glutDisplayFunc(showScreen)
-glutMainLoop()
+def main():
+    glutInit()
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB)
+    glutInitWindowSize(400, 400)
+    glutInitWindowPosition(100, 100)
+    glutCreateWindow(b"Symmetric Circles")
+    glutDisplayFunc(display)
+    glutMainLoop()
 
-
+if __name__ == "__main__":
+    main()

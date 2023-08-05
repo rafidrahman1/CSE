@@ -3,7 +3,7 @@ from OpenGL.GLUT import *
 from OpenGL.GLU import *
 from MidPointCircle import *
 import array as arr
-
+import math
 
 def iterate():
     glViewport(0, 0, 700, 700)#zoom
@@ -20,9 +20,19 @@ def showScreen():
     iterate()
     glPointSize(5.0)
 
-    r=100
-    MidpointCircle(r)
-    MidpointSmallCircle(r/2)
+    r=150 
+    sr=150/2  
+    c_x=200
+    c_y=200
+    MidpointCircle(r, c_x, c_y)
+
+    for i in range(8):
+        angle = (2*math.pi * i) / 8
+        offset_x = int(r * math.cos(angle))/2
+        offset_y = int(r * math.sin(angle))/2
+        
+        
+        MidpointCircle(sr, c_x + offset_x, c_y + offset_y)
     
     
 
