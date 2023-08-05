@@ -19,11 +19,12 @@ def showScreen():
     glLoadIdentity()
     iterate()
     glPointSize(5.0)
+    
 
-    r=150 
-    sr=150/2  
-    c_x=200
-    c_y=200
+    r=200 
+    sr=r/2  
+    c_x=300
+    c_y=300
     MidpointCircle(r, c_x, c_y)
 
     for i in range(8):

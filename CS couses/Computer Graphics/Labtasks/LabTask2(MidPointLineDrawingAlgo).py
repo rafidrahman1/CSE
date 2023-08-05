@@ -9,7 +9,7 @@ x = input()
 arr = [int(x) for x in str(x)]
 
 def iterate():
-    glViewport(0, 0, 700, 700)#zoom
+    glViewport(0, 0, 2000, 2000)#zoom
     glMatrixMode(GL_PROJECTION)
     glLoadIdentity()
     glOrtho(0.0, 500, 0.0, 500, 0.0, 1.0)
@@ -29,8 +29,8 @@ def showScreen():
     # MidpointLine(5, 5, 10, 5) 
     # MidpointLine(5, 10, 5, 15) 
     j=len(arr)-2
-    z=230
-    y=285
+    z=100
+    y=100
     for i in range(2):
         if arr[j]==0:
            zero(y,z)
@@ -62,8 +62,8 @@ def showScreen():
 
 glutInit()
 glutInitDisplayMode(GLUT_RGBA)
-glutInitWindowSize(800, 800) #window size
-glutInitWindowPosition(500, 125)#window position
+glutInitWindowSize(700, 700) #window size
+glutInitWindowPosition(700, 100)#window position
 window = glutCreateWindow(b"500 taka vangti lagbe") #window name
 glutDisplayFunc(showScreen)
 glutMainLoop()
