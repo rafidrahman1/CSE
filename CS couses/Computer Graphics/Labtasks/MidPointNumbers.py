@@ -4,9 +4,9 @@ from OpenGL.GLU import *
 
 
 def draw_points(x, y):
-    glPointSize(10) #pixel size. by default 1 thake
+    glPointSize(5) #pixel size. by default 1 thake
     glBegin(GL_POINTS)
-    glColor3f(1, 0, 1) #color
+    glColor3f(0, 1, 1) #color
     glVertex2f(x,y) #jekhane show korbe pixel, Cordinates
     glEnd()
 
