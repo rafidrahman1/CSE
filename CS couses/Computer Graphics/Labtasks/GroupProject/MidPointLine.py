@@ -3,10 +3,10 @@ from OpenGL.GLUT import *
 from OpenGL.GLU import *
 
 
-def draw_points(x, y):
-    glPointSize(5) #pixel size. by default 1 thake
+def draw_points(x, y, a, b, c, s):
+    glPointSize(s) #pixel size. by default 1 thake
     glBegin(GL_POINTS)
-    glColor3f(1, 1, 1) #color
+    glColor3f(a, b, c) #color
     glVertex2f(x,y) #jekhane show korbe pixel, Cordinates
     glEnd()
 
@@ -50,7 +50,7 @@ def ZoneZero(x, y, zone):
         return x, -y
 
 
-def MidpointLine(x0, y0, x1, y1):
+def MidPointLine(x0, y0, x1, y1, a, b, c, s):
     dx = abs(x1 - x0)
     dy = abs(y1 - y0)
     zone=0
@@ -87,7 +87,7 @@ def MidpointLine(x0, y0, x1, y1):
     d = dx - dy
 
     while x0 != x1 or y0 != y1:
-        draw_points(*OriginalZone(x0, y0, zone))
+        draw_points(*OriginalZone(x0, y0, zone), a, b, c, s)
         e2 = 2 * d
         if e2 > -dy:
             d -= dy
@@ -96,7 +96,7 @@ def MidpointLine(x0, y0, x1, y1):
             d += dx
             y0 += NE
 
-    draw_points(*OriginalZone(x0, y0, zone))
+    draw_points(*OriginalZone(x0, y0, zone), a, b, c, s)
 
     
         
@@ -106,103 +106,103 @@ def zero(a,b):
     x=b+20
     z=b-20
     s=a-20
-    MidpointLine(a, b, a, x)
-    MidpointLine(a, z, a, b)
-    MidpointLine(s, b, s, x)
-    MidpointLine(s, z, s, b)
-    MidpointLine(s, z, a, z) 
-    MidpointLine(s, x, a, x)  
+    MidPointLine(a, b, a, x)
+    MidPointLine(a, z, a, b)
+    MidPointLine(s, b, s, x)
+    MidPointLine(s, z, s, b)
+    MidPointLine(s, z, a, z) 
+    MidPointLine(s, x, a, x)  
     
 
 def one(a,b):
     x=b+20
     z=b-20
     s=a-20
-    MidpointLine(a, b, a, x)
-    MidpointLine(a, z, a, b)
+    MidPointLine(a, b, a, x)
+    MidPointLine(a, z, a, b)
     
 
 def two(a,b):
     x=b+20
     z=b-20
     s=a-20
-    MidpointLine(a, b, a, x)
-    MidpointLine(s, z, s, b)
-    MidpointLine(s, b, a, b)
-    MidpointLine(s, z, a, z)
-    MidpointLine(s, x, a, x)     
+    MidPointLine(a, b, a, x)
+    MidPointLine(s, z, s, b)
+    MidPointLine(s, b, a, b)
+    MidPointLine(s, z, a, z)
+    MidPointLine(s, x, a, x)     
     
    
 def three(a,b):
     x=b+20
     z=b-20
     s=a-20
-    MidpointLine(a, b, a, x)
-    MidpointLine(a, z, a, b)
-    MidpointLine(s, b, a, b)
-    MidpointLine(s, z, a, z)
-    MidpointLine(s, x, a, x)   
+    MidPointLine(a, b, a, x)
+    MidPointLine(a, z, a, b)
+    MidPointLine(s, b, a, b)
+    MidPointLine(s, z, a, z)
+    MidPointLine(s, x, a, x)   
     
 
 def four(a,b):
     x=b+20
     z=b-20
     s=a-20
-    MidpointLine(a, b, a, x)
-    MidpointLine(s, b, s, x)
-    MidpointLine(a, z, a, b)
-    MidpointLine(s, b, a, b)  
+    MidPointLine(a, b, a, x)
+    MidPointLine(s, b, s, x)
+    MidPointLine(a, z, a, b)
+    MidPointLine(s, b, a, b)  
     
 
 def five(a,b):
     x=b+20
     z=b-20
     s=a-20
-    MidpointLine(s, b, s, x)
-    MidpointLine(a, z, a, b)
-    MidpointLine(s, b, a, b)
-    MidpointLine(s, z, a, z)
-    MidpointLine(s, x, a, x)    
+    MidPointLine(s, b, s, x)
+    MidPointLine(a, z, a, b)
+    MidPointLine(s, b, a, b)
+    MidPointLine(s, z, a, z)
+    MidPointLine(s, x, a, x)    
     
 
 def six(a,b):
     x=b+20
     z=b-20
     s=a-20
-    MidpointLine(s, b, s, x)
-    MidpointLine(a, z, a, b)
-    MidpointLine(s, z, s, b)
-    MidpointLine(s, b, a, b)
-    MidpointLine(s, z, a, z)
-    MidpointLine(s, x, a, x)     
+    MidPointLine(s, b, s, x)
+    MidPointLine(a, z, a, b)
+    MidPointLine(s, z, s, b)
+    MidPointLine(s, b, a, b)
+    MidPointLine(s, z, a, z)
+    MidPointLine(s, x, a, x)     
 
 def seven(a,b):
     x=b+20
     z=b-20
     s=a-20
-    MidpointLine(a, b, a, x)
-    MidpointLine(a, z, a, b)
-    MidpointLine(s, x, a, x)
+    MidPointLine(a, b, a, x)
+    MidPointLine(a, z, a, b)
+    MidPointLine(s, x, a, x)
     
 def eight(a,b):
     x=b+20
     z=b-20
     s=a-20
-    MidpointLine(a, b, a, x)
-    MidpointLine(a, z, a, b)
-    MidpointLine(s, b, s, x)
-    MidpointLine(s, z, s, b)
-    MidpointLine(s, b, a, b) 
-    MidpointLine(s, z, a, z)
-    MidpointLine(s, x, a, x) 
+    MidPointLine(a, b, a, x)
+    MidPointLine(a, z, a, b)
+    MidPointLine(s, b, s, x)
+    MidPointLine(s, z, s, b)
+    MidPointLine(s, b, a, b) 
+    MidPointLine(s, z, a, z)
+    MidPointLine(s, x, a, x) 
 
 def nine(a,b):
     x=b+20
     z=b-20
     s=a-20
-    MidpointLine(a, b, a, x)
-    MidpointLine(s, b, s, x)
-    MidpointLine(a, z, a, b)
-    MidpointLine(s, b, a, b)
-    MidpointLine(s, z, a, z)  
-    MidpointLine(s, x, a, x)        
+    MidPointLine(a, b, a, x)
+    MidPointLine(s, b, s, x)
+    MidPointLine(a, z, a, b)
+    MidPointLine(s, b, a, b)
+    MidPointLine(s, z, a, z)  
+    MidPointLine(s, x, a, x)        

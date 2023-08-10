@@ -1,7 +1,7 @@
 from OpenGL.GL import *
 from OpenGL.GLUT import *
 from OpenGL.GLU import *
-from MidPointNumbers import *
+from MidPointLine import *
 import array as arr
 
 print("Enter your ID: ")

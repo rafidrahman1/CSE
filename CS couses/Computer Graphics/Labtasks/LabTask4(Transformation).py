@@ -27,12 +27,12 @@ def transform():
     glColor3f(.5, .3, .7)
     glPointSize(5)
 
-    glBegin(GL_LINES)
-    glVertex2f(250, 500)
-    glVertex2f(250, 0)
-    glVertex2f(0, 250)
-    glVertex2f(500, 250)
-    glEnd()
+    # glBegin(GL_LINES)
+    # glVertex2f(250, 500)
+    # glVertex2f(250, 0)
+    # glVertex2f(0, 250)
+    # glVertex2f(500, 250)
+    # glEnd()
 
     glBegin(GL_QUADS)
     glColor3f(0, 1, 0)
@@ -77,16 +77,16 @@ def transform():
     # v44 = np.matmul(r,v4)
 
     # scaling
-    # v11 = np.matmul(s,v1)
-    # v22 = np.matmul(s,v2)
-    # v33 = np.matmul(s,v3)
-    # v44 = np.matmul(s,v4)
+    v11 = np.matmul(s,v1)
+    v22 = np.matmul(s,v2)
+    v33 = np.matmul(s,v3)
+    v44 = np.matmul(s,v4)
 
     # rotation - scaling
-    v11 = np.matmul(rs, v1)
-    v22 = np.matmul(rs, v2)
-    v33 = np.matmul(rs, v3)
-    v44 = np.matmul(rs, v4)
+    # v11 = np.matmul(rs, v1)
+    # v22 = np.matmul(rs, v2)
+    # v33 = np.matmul(rs, v3)
+    # v44 = np.matmul(rs, v4)
     #
     glColor3f(1, 0, 0)
     glBegin(GL_QUADS)
@@ -95,6 +95,7 @@ def transform():
     glVertex2f(v33[0][0] + 250, v33[1][0] + 250)
     glVertex2f(v44[0][0] + 250, v44[1][0] + 250)
     glEnd()
+    
 
 
 def showScreen():

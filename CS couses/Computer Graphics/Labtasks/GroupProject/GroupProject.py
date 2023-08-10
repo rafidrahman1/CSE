@@ -1,16 +1,14 @@
 from OpenGL.GL import *
 from OpenGL.GLUT import *
 from OpenGL.GLU import *
-from MidPointCircle import *
-from MidPointNumbers import *
-from Stage import *
-import random
-import array as arr
+from Thread import *
+from Reel import *
+from Background import *
+from Kite import *
+import math
+import numpy as np
 
-
-# print("Enter your ID: ")
-# x = input()
-# arr = [int(x) for x in str(x)]
+x=input()
 
 def iterate():
     glViewport(0, 0, 2000, 2000)#zoom
@@ -25,22 +23,20 @@ def showScreen():
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
     glLoadIdentity()
     iterate()
-    #Natai
-    MidpointLine(40, 20, 40, 50)
-    MidpointLine(20, 35, 40, 35)
-    MidpointLine(135, 20, 135, 50)
-    MidpointLine(135, 35, 155, 35)
-    x=25
-    for i in range(21):
-       MidpointLine(40, x, 135, x)
-       x+=1
-    #Natai er Suta.
-    Stages(4)
-
     
-
-
+    Background()
+    Reel()
+    Kite()
     
+    if x=="1":
+        Thread(1)
+    elif x=="2":
+        Thread(2)
+    elif x=="3":
+        Thread(3)          
+    else:
+        Thread(0)
+
     glutSwapBuffers()
 
 
@@ -49,7 +45,7 @@ glutInit()
 glutInitDisplayMode(GLUT_RGBA)
 glutInitWindowSize(700, 700) #window size
 glutInitWindowPosition(700, 100)#window position
-window = glutCreateWindow(b"500 taka vangti lagbe") #window name
+window = glutCreateWindow(b"Let's fly a kite ez") #window name
 glutDisplayFunc(showScreen)
 glutMainLoop()
 
