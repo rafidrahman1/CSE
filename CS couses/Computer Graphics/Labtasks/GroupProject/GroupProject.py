@@ -7,7 +7,7 @@ from Background import *
 from Kite import *
 from CircleThread import * 
 
-x=input()
+x=0
 
 def iterate():
     glViewport(0, 0, 2000, 2000)#zoom
@@ -17,28 +17,52 @@ def iterate():
     glMatrixMode (GL_MODELVIEW)
     glLoadIdentity()
  
+def animate(_):
+    global x
+
+    x+=1
+    if x==8:
+        x=0
+
+    glutPostRedisplay()  # Trigger a redraw
+
+    # Call the animate function again after a delay
+    glutTimerFunc(10, animate, 0)
 
 def showScreen():
-    # glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
     glLoadIdentity()
     iterate()
     
-    Background()    
+    
+    Background()
+
     Thread(x)
-    Kite(x)    
-    Reel()    
+
+    Kite(x) 
+
+    Reel()  
+
     CircleThread(x)
+    
+
+    
 
     glutSwapBuffers()
-
+    
 
 
 glutInit()
-glutInitDisplayMode(GLUT_RGBA)
+glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB)
 glutInitWindowSize(700, 700) #window size
 glutInitWindowPosition(700, 100)#window position
 window = glutCreateWindow(b"Let's fly a kite ez") #window name
 glutDisplayFunc(showScreen)
+
+# Start the animation by calling the animate function
+glutTimerFunc(0, animate, 0)
+
+# Start the main loop
 glutMainLoop()
 
 
