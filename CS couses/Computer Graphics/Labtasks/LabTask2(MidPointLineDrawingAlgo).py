@@ -27,31 +27,35 @@ def showScreen():
     # MidpointLine(10, 15, 5, 15)
     # MidpointLine(5, 10, 5, 5)
     # MidpointLine(5, 5, 10, 5) 
-    # MidpointLine(5, 10, 5, 15) 
+    # MidpointLine(5, 10, 5, 15)
+    d=1
+    f=0
+    g=1
+    h=2 
     j=len(arr)-2
     z=100
     y=100
     for i in range(2):
         if arr[j]==0:
-           zero(y,z)
+           zero(y,z,d,f,g,h)
         elif arr[j]==1:
-            one(y,z) 
+            one(y,z,d,f,g,h) 
         elif arr[j]==2:
-            two(y,z)     
+            two(y,z,d,f,g,h)     
         elif arr[j]==3:
-            three(y,z)
+            three(y,z,d,f,g,h)
         elif arr[j]==4:
-            four(y,z)
+            four(y,z,d,f,g,h)
         elif arr[j]==5:
-            five(y,z)
+            five(y,z,d,f,g,h)
         elif arr[j]==6:
-            six(y,z)
+            six(y,z,d,f,g,h)
         elif arr[j]==7:
-            seven(y,z)
+            seven(y,z,d,f,g,h)
         elif arr[j]==8:
-            eight(y,z)
+            eight(y,z,d,f,g,h)
         else:
-            nine(y,z)      
+            nine(y,z,d,f,g,h)      
 
         y+=30  
         j+=1

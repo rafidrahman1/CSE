@@ -97,3 +97,108 @@ def MidPointLine(x0, y0, x1, y1, a, b, c, s):
             y0 += NE
 
     draw_points(*OriginalZone(x0, y0, zone), a, b, c, s)
+
+def zero(a,b,d,f,g,h):
+    x=b+20
+    z=b-20
+    s=a-20
+    MidPointLine(a, b, a, x,d,f,g,h)
+    MidPointLine(a, z, a, b,d,f,g,h)
+    MidPointLine(s, b, s, x,d,f,g,h)
+    MidPointLine(s, z, s, b,d,f,g,h)
+    MidPointLine(s, z, a, z,d,f,g,h) 
+    MidPointLine(s, x, a, x,d,f,g,h)  
+    
+
+def one(a,b,d,f,g,h):
+    x=b+20
+    z=b-20
+    s=a-20
+    MidPointLine(a, b, a, x,d,f,g,h)
+    MidPointLine(a, z, a, b,d,f,g,h)
+    
+
+def two(a,b,d,f,g,h):
+    x=b+20
+    z=b-20
+    s=a-20
+    MidPointLine(a, b, a, x,d,f,g,h)
+    MidPointLine(s, z, s, b,d,f,g,h)
+    MidPointLine(s, b, a, b,d,f,g,h)
+    MidPointLine(s, z, a, z,d,f,g,h)
+    MidPointLine(s, x, a, x,d,f,g,h)     
+    
+   
+def three(a,b,d,f,g,h):
+    x=b+20
+    z=b-20
+    s=a-20
+    MidPointLine(a, b, a, x,d,f,g,h)
+    MidPointLine(a, z, a, b,d,f,g,h)
+    MidPointLine(s, b, a, b,d,f,g,h)
+    MidPointLine(s, z, a, z,d,f,g,h)
+    MidPointLine(s, x, a, x,d,f,g,h)   
+    
+
+def four(a,b,d,f,g,h):
+    x=b+20
+    z=b-20
+    s=a-20
+    MidPointLine(a, b, a, x,d,f,g,h)
+    MidPointLine(s, b, s, x,d,f,g,h)
+    MidPointLine(a, z, a, b,d,f,g,h)
+    MidPointLine(s, b, a, b,d,f,g,h)  
+    
+
+def five(a,b,d,f,g,h):
+    x=b+20
+    z=b-20
+    s=a-20
+    MidPointLine(s, b, s, x,d,f,g,h)
+    MidPointLine(a, z, a, b,d,f,g,h)
+    MidPointLine(s, b, a, b,d,f,g,h)
+    MidPointLine(s, z, a, z,d,f,g,h)
+    MidPointLine(s, x, a, x,d,f,g,h)    
+    
+
+def six(a,b,d,f,g,h):
+    x=b+20
+    z=b-20
+    s=a-20
+    MidPointLine(s, b, s, x,d,f,g,h)
+    MidPointLine(a, z, a, b,d,f,g,h)
+    MidPointLine(s, z, s, b,d,f,g,h)
+    MidPointLine(s, b, a, b,d,f,g,h)
+    MidPointLine(s, z, a, z)
+    MidPointLine(s, x, a, x,d,f,g,h)     
+
+def seven(a,b,d,f,g,h):
+    x=b+20
+    z=b-20
+    s=a-20
+    MidPointLine(a, b, a, x,d,f,g,h)
+    MidPointLine(a, z, a, b,d,f,g,h)
+    MidPointLine(s, x, a, x,d,f,g,h)
+    
+def eight(a,b,d,f,g,h):
+    x=b+20
+    z=b-20
+    s=a-20
+    MidPointLine(a, b, a, x,d,f,g,h)
+    MidPointLine(a, z, a, b,d,f,g,h)
+    MidPointLine(s, b, s, x,d,f,g,h)
+    MidPointLine(s, z, s, b,d,f,g,h)
+    MidPointLine(s, b, a, b,d,f,g,h) 
+    MidPointLine(s, z, a, z,d,f,g,h)
+    MidPointLine(s, x, a, x,d,f,g,h) 
+
+def nine(a,b,d,f,g,h):
+    x=b+20
+    z=b-20
+    s=a-20
+    MidPointLine(a, b, a, x,d,f,g,h)
+    MidPointLine(s, b, s, x,d,f,g,h)
+    MidPointLine(a, z, a, b,d,f,g,h)
+    MidPointLine(s, b, a, b,d,f,g,h)
+    MidPointLine(s, z, a, z,d,f,g,h)  
+    MidPointLine(s, x, a, x,d,f,g,h)    

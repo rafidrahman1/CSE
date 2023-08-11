@@ -5,8 +5,7 @@ from Thread import *
 from Reel import *
 from Background import *
 from Kite import *
-import math
-import numpy as np
+from CircleThread import * 
 
 x=input()
 
@@ -20,22 +19,15 @@ def iterate():
  
 
 def showScreen():
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
+    # glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
     glLoadIdentity()
     iterate()
     
-    Background()
-    Reel()
-    Kite()
-    
-    if x=="1":
-        Thread(1)
-    elif x=="2":
-        Thread(2)
-    elif x=="3":
-        Thread(3)          
-    else:
-        Thread(0)
+    Background()    
+    Thread(x)
+    Kite(x)    
+    Reel()    
+    CircleThread(x)
 
     glutSwapBuffers()
 

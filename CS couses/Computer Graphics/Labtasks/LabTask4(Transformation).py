@@ -28,10 +28,10 @@ def transform():
     glPointSize(5)
 
     # glBegin(GL_LINES)
-    # glVertex2f(250, 500)
-    # glVertex2f(250, 0)
-    # glVertex2f(0, 250)
-    # glVertex2f(500, 250)
+    # glVertex2f(200, 300)
+    # glVertex2f(200, 200)
+    # glVertex2f(300, 200)
+    # glVertex2f(300, 300)
     # glEnd()
 
     glBegin(GL_QUADS)
@@ -50,44 +50,44 @@ def transform():
                   [b, a, 0],
                   [0, 0, 1]])
 
-    sc = 0.5
+    sc = .2
     s = np.array([[sc, 0, 0],
                   [0, sc, 0],
                   [0, 0, 1]])
 
     rs = np.matmul(r, s)
 
-    v1 = np.array([[-50],
-                   [50],
+    v1 = np.array([[-10],
+                   [10],
                    [1]])
-    v2 = np.array([[-50],
-                   [-50],
+    v2 = np.array([[-10],
+                   [-10],
                    [1]])
-    v3 = np.array([[50],
-                   [-50],
+    v3 = np.array([[10],
+                   [-10],
                    [1]])
-    v4 = np.array([[50],
-                   [50],
+    v4 = np.array([[10],
+                   [10],
                    [1]])
 
     # rotation
-    # v11 = np.matmul(r,v1)
-    # v22 = np.matmul(r,v2)
-    # v33 = np.matmul(r,v3)
-    # v44 = np.matmul(r,v4)
+    v11 = np.matmul(r,v1)
+    v22 = np.matmul(r,v2)
+    v33 = np.matmul(r,v3)
+    v44 = np.matmul(r,v4)
 
-    # scaling
-    v11 = np.matmul(s,v1)
-    v22 = np.matmul(s,v2)
-    v33 = np.matmul(s,v3)
-    v44 = np.matmul(s,v4)
+    # # scaling
+    # v11 = np.matmul(s,v1)
+    # v22 = np.matmul(s,v2)
+    # v33 = np.matmul(s,v3)
+    # v44 = np.matmul(s,v4)
 
     # rotation - scaling
     # v11 = np.matmul(rs, v1)
     # v22 = np.matmul(rs, v2)
     # v33 = np.matmul(rs, v3)
     # v44 = np.matmul(rs, v4)
-    #
+
     glColor3f(1, 0, 0)
     glBegin(GL_QUADS)
     glVertex2f(v11[0][0] + 250, v11[1][0] + 250)
@@ -96,6 +96,10 @@ def transform():
     glVertex2f(v44[0][0] + 250, v44[1][0] + 250)
     glEnd()
     
+    
+    glVertex2f(200, 300)
+    glVertex2f(200, 200)
+   
 
 
 def showScreen():
