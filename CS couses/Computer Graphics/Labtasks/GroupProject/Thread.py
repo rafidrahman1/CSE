@@ -2,15 +2,24 @@ from MidPointCircle import *
 from MidPointLine import *
 
 def Thread(x):
-    
-    if x=="1":
+    if x==1:
        suta=2
-    elif x=="2":
+    elif x==2:
+       suta=3
+    elif x==3:
+       suta=4
+    elif x==4:
+       suta=5
+    elif x==5:
        suta=6
-    elif x=="3":
-       suta=9
-    else:
-       suta=0   
+    elif x==6:
+       suta=7
+    elif x==7:
+       suta=9    
+    elif x==8:
+       suta=9 
+    else: 
+        suta=0    
   
     arr=[88, 35, 86, 41, 1, 0, 0, 2]
     for i in range(suta):      
