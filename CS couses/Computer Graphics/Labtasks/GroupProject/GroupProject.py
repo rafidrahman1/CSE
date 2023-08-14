@@ -3,10 +3,15 @@ from OpenGL.GLUT import *
 from OpenGL.GLU import *
 from Thread import *
 from Reel import *
-from Background import *
+from NightBackground import *
+from DayBackground import *
 from Kite import *
 from CircleThread import * 
+from Sun import *
+from Star import *
 
+print("Day or Night?(d/n): ")
+n=input()
 x=0
 
 def iterate():
@@ -34,19 +39,34 @@ def showScreen():
     glLoadIdentity()
     iterate()
     
-    
-    Background()
+    if n=="n":
+       NightBackground()
+       Star()
+       Thread(x)
+       Kite(x) 
+       Reel()  
+       CircleThread(x)  
 
-    Thread(x)
+    elif n=="d": 
+       DayBackground()
+       Sun(x)
+       Thread(x)
+       Kite(x) 
+       Reel()  
+       CircleThread(x)          
 
-    Kite(x) 
+    elif n=="johncena":
+       DayBackground()
+       Sun(x)
+       Thread(x)
+       Reel()  
+       CircleThread(x)
 
-    Reel()  
-
-    CircleThread(x)
-    
-
-    
+    else :
+       DayBackground()
+         
+       
+ 
 
     glutSwapBuffers()
     
@@ -60,7 +80,7 @@ window = glutCreateWindow(b"Let's fly a kite ez") #window name
 glutDisplayFunc(showScreen)
 
 # Start the animation by calling the animate function
-glutTimerFunc(0, animate, 0)
+glutTimerFunc(10, animate, 0)
 
 # Start the main loop
 glutMainLoop()

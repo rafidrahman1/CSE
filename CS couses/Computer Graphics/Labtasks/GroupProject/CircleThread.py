@@ -26,14 +26,15 @@ def CircleThread(x):
     a=1
     b=0
     c=0
+    
     #centre
     c_x=88
     c_xn=88
     c_y=35    
     for i in range(ran):
-      MidpointCircle(r, c_x, c_y,a,b,c)
+      MidpointCircle(r, c_x, c_y,a,b,c,3)
       c_x+=1
     for i in range(ran):
-      MidpointCircle(r, c_xn, c_y,a,b,c)
+      MidpointCircle(r, c_xn, c_y,a,b,c,3)
       c_xn-=1 
 

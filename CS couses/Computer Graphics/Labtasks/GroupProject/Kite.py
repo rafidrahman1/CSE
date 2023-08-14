@@ -43,17 +43,17 @@ def Kite(x):
     c=96-s
 
     for x in range(10-s):
-        MidPointLine(a, b, c, b, 1, 1, 0, 5)
+        MidPointLine(a, b, c, b, 1, 0, 1, 5)
         a+=1
         b+=1
         c-=1
     for x in range(20-s):
-        MidPointLine(a, b, c, b, 1, 1, 0, 5)
+        MidPointLine(a, b, c, b, 1, 0, 1, 5)
         a+=1
         b+=1
         c-=1    
     for x in range(21-s):
-        MidPointLine(a, b, c, b, 1, 1, 0, 5)
+        MidPointLine(a, b, c, b, 1, 0, 1, 5)
         a-=1
         b+=1
         c+=1  

@@ -1,11 +1,10 @@
 from OpenGL.GL import *
 from OpenGL.GLUT import *
 from OpenGL.GLU import *
-import math
 
 
-def draw_points(x, y, a,b,c):
-    glPointSize(3) #pixel size. by default 1 thake
+def draw_points(x, y, a,b,c,p):
+    glPointSize(p) #pixel size. by default 1 thake
     glBegin(GL_POINTS)
     glColor3f(a, b, c) #color
     glVertex2f(x,y)
@@ -15,15 +14,15 @@ def draw_points(x, y, a,b,c):
     glEnd()
 
 
-def sym(x, y, c_x, c_y,a,b,c):
-    draw_points(c_x + x, c_y + y,a,b,c)
-    draw_points(c_x - x, c_y + y,a,b,c)
-    draw_points(c_x + x, c_y - y,a,b,c)
-    draw_points(c_x - x, c_y - y,a,b,c)
-    draw_points(c_x + y, c_y + x,a,b,c)
-    draw_points(c_x - y, c_y + x,a,b,c)
-    draw_points(c_x + y, c_y - x,a,b,c)
-    draw_points(c_x - y, c_y - x,a,b,c)
+def sym(x, y, c_x, c_y,a,b,c,p):
+    draw_points(c_x + x, c_y + y,a,b,c,p)
+    draw_points(c_x - x, c_y + y,a,b,c,p)
+    draw_points(c_x + x, c_y - y,a,b,c,p)
+    draw_points(c_x - x, c_y - y,a,b,c,p)
+    draw_points(c_x + y, c_y + x,a,b,c,p)
+    draw_points(c_x - y, c_y + x,a,b,c,p)
+    draw_points(c_x + y, c_y - x,a,b,c,p)
+    draw_points(c_x - y, c_y - x,a,b,c,p)
 
 # def sm_sym(x, y, c_x, c_y,r):
 #     c_x+=15+150
@@ -65,12 +64,12 @@ def sym(x, y, c_x, c_y,a,b,c):
 #     draw_spoints(c_x,c_y,x,y)
 
 
-def MidpointCircle(r, c_x, c_y,a,b,c):
+def MidpointCircle(r, c_x, c_y,a,b,c,p):
     d= 1-r
     x= 0
     y= r
     while x<=y:
-        sym(x,y,c_x,c_y,a,b,c)
+        sym(x,y,c_x,c_y,a,b,c,p)
         if(d<0):
             #choose E
             d= d+ 2*x +3

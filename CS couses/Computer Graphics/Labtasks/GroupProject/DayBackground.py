@@ -1,6 +1,6 @@
 from MidPointLine import *
 
-def Background():
+def DayBackground():
     #Jomin
     y=0
     for i in range(85):
