@@ -1,5 +1,4 @@
 from MidPointCircle import *
-from MidPointLine import *
 
 def CircleThread(x):
     if x==1:
