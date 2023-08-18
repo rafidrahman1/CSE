@@ -7,12 +7,8 @@ def Sun(x):
     while l>=0:
      MidpointCircle(l, 160, 160,1,1,0,p)
      l-=1
-     
-
-    j=x+3
-    
-    for y in range(j):
-        MidpointCircle(x+1, 160, 160,1,0,0,p)
+         
+    MidpointCircle(x+1, 160, 160,1,0,0,p)
     # for y in range(j):
     #     MidpointCircle(x+2, 160, 160,1,0,0)    
         

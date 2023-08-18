@@ -38,22 +38,22 @@ def showScreen():
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
     glLoadIdentity()
     iterate()
+
+    def commonMethods():
+        Thread(x)
+        Kite(x) 
+        Reel()  
+        CircleThread(x)
     
     if n=="n":
        NightBackground()
        Star()
-       Thread(x)
-       Kite(x) 
-       Reel()  
-       CircleThread(x)  
+       commonMethods() 
 
     elif n=="d": 
        DayBackground()
        Sun(x)
-       Thread(x)
-       Kite(x) 
-       Reel()  
-       CircleThread(x)          
+       commonMethods()          
 
     elif n=="johncena":
        DayBackground()
