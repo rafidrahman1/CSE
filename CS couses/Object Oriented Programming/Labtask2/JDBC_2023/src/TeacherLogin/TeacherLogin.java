@@ -51,8 +51,8 @@ public class TeacherLogin {
                         System.out.println("Name   &   ID");
                         resultSet = statement.executeQuery("select * from users WHERE sections_id = " + sections_id + " ");
                         while(resultSet.next()) {
-                            System.out.print(resultSet.getString("name  ")+" ");
-                            System.out.print(resultSet.getInt("  id")+" ");
+                            System.out.print(resultSet.getString("name")+" ");
+                            System.out.print(resultSet.getInt("id")+" ");
                             System.out.println();
                         }
                     }
