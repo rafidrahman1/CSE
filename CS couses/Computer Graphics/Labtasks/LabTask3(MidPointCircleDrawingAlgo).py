@@ -25,14 +25,14 @@ def showScreen():
     sr=r/2  
     c_x=300
     c_y=300
-    MidpointCircle(r, c_x, c_y)
+    MidpointCircle(r, c_x, c_y, 1, 0, 1)
 
     for i in range(8):
         angle = (2*math.pi * i) / 8
         offset_x = int(r * math.cos(angle))/2
         offset_y = int(r * math.sin(angle))/2
         
-        MidpointCircle(sr, c_x + offset_x, c_y + offset_y)
+        MidpointCircle(sr, c_x + offset_x, c_y + offset_y, 1, 1, 1)
     
     
 

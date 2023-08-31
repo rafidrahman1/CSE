@@ -1,11 +1,9 @@
 import java.sql.*;
 import java.util.Scanner;
-
 import static Sections.Sections.*;
 import static StudentRegistration.StudentRegistration.*;
 import static StudentLogin.StudentLogin.*;
 import static TeacherLogin.TeacherLogin.*;
-
 public class JDBCPractice {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
