@@ -11,7 +11,7 @@ public class Sections {
         String name = scanner.nextLine();
         System.out.print("Enter time: ");
         String time = scanner.nextLine();
-        int seats = 30;
+        int seats = 5;
 
 
         Statement statement = connection.createStatement();
